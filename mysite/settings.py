@@ -25,7 +25,7 @@ SECRET_KEY = 'p$14r4n5+q3x9!_i2b9v9q_6)t^t4mfud-zn7+=k-28sr-a+47'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['axllasthero.pythonanywhere.com']
+ALLOWED_HOSTS = ['axllasthero.pythonanywhere.com', '127.0.0.1','127.0.0.1:8000']
 
 
 # Application definition
