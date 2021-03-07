@@ -4,17 +4,19 @@ from django.http import HttpResponse
 from .models import Question, Choice
 # Create your views here.
 def index(request):
-    q_all = Question.objects.all()
-    res = "<ol>"
-    for q in q_all:
-        res += "<li>%s</li>" % q.text
-    res += "</ol>"        
-    return HttpResponse(res)
+    questions = Question.objects.all()
+    context = {
+        "questions" : questions
+    }
+    return render(request, "index.html", context)
 
 
 def detail(request, q_id):
-    res = "Question number %s. " % q_id
-    return HttpResponse(res)
+    questions = Question.objects.get(pk=q_id)
+    context = {
+        "questions" : questions
+    }
+    return HttpResponse(request, "polls/index.html", context)
 
 def results(request, q_id):
     res = "Result for Question number %s. " % q_id
