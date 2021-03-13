@@ -12,14 +12,14 @@ def index(request):
 
 
 def detail(request, q_id):
-    questions = Question.objects.get(pk=q_id)
+    question = Question.objects.get(pk=q_id)
     context = {
-        "questions" : questions
+        "question" : question
     }
     return HttpResponse(request, "polls/index.html", context)
 
 def results(request, q_id):
-    res = "Result for Question number %s. " % q_id
+    res = "Result for Question number %s." % q_id
     return HttpResponse(res)
 
 def vote(request, q_id):
